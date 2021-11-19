@@ -1075,6 +1075,6 @@ $rfs-breakpoint-unit-cache: unit($rfs-breakpoint);
 }
 
 
-@mixin transition($time: .2s, $property: all, $atf: ease-in-out) {
+@mixin transition($time: .2s, $property: all, $atf: linear) {
     transition: $time $property $atf;
 }

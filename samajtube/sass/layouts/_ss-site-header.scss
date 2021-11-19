@@ -25,9 +25,15 @@
 
 .user {
 
-    &--block {}
+    &--block {
+        position: relative;
+        z-index: 1;
+        min-width: 100px;
+        max-width: 160px;
+    }
 
     &__btn {
+        width: 100%;
         position: relative;
         border: 0;
         padding: 0;
@@ -39,7 +45,6 @@
         align-items: center;
         line-height: 1;
         padding-right: 1.5rem;
-        min-width: 120px;
         z-index: 1;
 
         &:focus {
@@ -73,7 +78,72 @@
     }
 
     &__lists {
-        display: none;
+        position: absolute;
+        top: calc(100% + 30px);
+        left: 50%;
+        width: 200px;
+        transform: translateX(-50%);
+        background: rgba($black, .85);
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        box-shadow: 0 0 15px 5px rgba($black, .1);
+        border-radius: 5px;
+        @include transition();
+        z-index: 1;
+        opacity: 0;
+        visibility: hidden;
+
+        &:before {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            content: '';
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 0 10px 10px 10px;
+            border-color: transparent transparent $black transparent;
+            @include transition();
+            z-index: -1;
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        &.active {
+            top: calc(100% + 10px);
+            opacity: 1;
+            visibility: visible;
+
+            &:before {
+                top: -10px;
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+
+        a {
+            display: block;
+            color: $white;
+            padding: .5rem 1rem;
+            border-bottom: 1px solid rgba($white, .2);
+            font-size: 0.75rem;
+            letter-spacing: 1px;
+
+            &:hover {
+                color: $white;
+                background: rgba($white, .2);
+            }
+        }
+
+        li {
+            &:last-of-type {
+                a {
+                    border: 0;
+                }
+            }
+        }
     }
 }
 
