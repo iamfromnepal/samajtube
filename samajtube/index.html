@@ -4,12 +4,60 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1">
+	<link rel="stylesheet" href="vendors/slick/slick.css">
 	<link rel="stylesheet" href="assets/css/style.css">
 	<title>SamajTube</title>
 </head>
 
-<body>
+<body class="darkModse">
 	<header id="header" class="site-header">
+		<div class="container">
+			<div class="site-branding">
+				<a href="#">
+					<span class="icon-site-logo"></span>
+				</a>
+			</div><!-- /.site-logo -->
+
+			<div class="site-header__right">
+				<div class="form-block">
+					<form action="#" class="searchForm">
+						<div class="form-group">
+							<input type="text" class="form-control" placeholder="Search artists, songs, albums">
+						</div><!-- /.form-group -->
+
+						<div class="form-btn">
+							<button type="submit" class="submitBtn">
+								<span class="icon-magnifier"></span>
+							</button>
+						</div><!-- /.btn-wrap -->
+					</form>
+				</div><!-- /.form-block -->
+
+				<div class="user user--block">
+					<button class="user__btn">
+						<span class="user__head"><img src="assets/images/avatar-sm.jpg" alt="Ram"></span>
+						<span class="user__name">Sudhan Shahi</span>
+					</button><!-- /.user__btn -->
+					<ul class="user__lists">
+						<li>
+							<a href="#">Profile</a>
+						</li>
+
+						<li>
+							<a href="#">Messages</a>
+						</li>
+
+						<li>
+							<a href="#">Settings</a>
+						</li>
+
+						<li>
+							<a href="#">Channel</a>
+						</li>
+					</ul><!-- /.user__lists -->
+				</div><!-- /.user-block -->
+			</div><!-- /.site-header__right -->
+		</div>
 	</header> <!-- / .site-header -->
 
 	<main id="main" class="site-content">
@@ -19,6 +67,7 @@
 	</footer> <!-- / .site-footer -->
 
 	<script src="assets/js/jquery.min.js"></script>
+	<script src="vendors/slick/slick.js"></script>
 	<script src="assets/js/main.js"></script>
 </body>
 

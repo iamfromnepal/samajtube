@@ -1,6 +1,7 @@
 #IDE
 /nbproject
 /.idea
+.vscode/
 
 #robots
 *robots.txt
