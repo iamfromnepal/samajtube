@@ -24,4 +24,25 @@ jQuery(document).ready(function ($) {
         console.log('clicked');
         $('.user__lists').toggleClass('show');
     });
+
+    $('.toggleDarkMode').on('click', function () {
+        $('.toggleDarkMode').toggleClass('dark');
+        $('body').toggleClass('darkMode');
+    });
+
+    $('.toggleSidebar').on('click', function () {
+        $('.withSidebar .sidebar').toggleClass('show');
+    });
+
+    function stickyHeader() {
+        var header = $('.site-header');
+        var headerHeight = header.innerHeight();
+        var ptElm = $('.withSidebar .widget-wrapper, .main-content');
+        ptElm.css('padding-top', headerHeight + 5);
+        console.log(headerHeight);
+    }
+
+    stickyHeader();
+
+    setTimeout(stickyHeader, 1000);
 });

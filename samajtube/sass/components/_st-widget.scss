@@ -1,5 +1,20 @@
 .widget {
     font-size: 0.6875rem;
+    padding: 2rem 0;
+    border-bottom: 1px solid $black;
+
+    @include media-breakpoint-up(lg) {
+        padding: 3.1rem 0;
+    }
+
+    &:first-of-type {
+        padding-top: .3rem;
+    }
+
+    &:last-of-type {
+        padding-bottom: 1rem;
+        border-bottom: 0;
+    }
 
     ul {
         padding: 0;
@@ -12,6 +27,7 @@
         text-transform: uppercase;
         letter-spacing: 1px;
         font-weight: 600;
+        margin-bottom: 1.5rem;
     }
 
     &__content {
@@ -33,7 +49,7 @@
             flex-wrap: wrap;
             justify-content: space-between;
             align-items: center;
-            color: $gray-500;
+            color: $black;
             @include transition();
             font-weight: 500;
             font-size: 0.875rem;
@@ -52,7 +68,7 @@
 
                 i {
                     font-size: .9rem;
-                    color: $gray-500;
+                    color: $white;
                     display: block;
                     @include transition();
                 }
@@ -60,12 +76,9 @@
 
             .text {
                 width: calc(100% - 48px);
-                position: relative;
-                top: 1px;
             }
 
             &:hover {
-                // color: $white;
 
                 .icon-wrap {
                     background: $orange;

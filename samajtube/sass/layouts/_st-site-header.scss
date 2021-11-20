@@ -1,12 +1,11 @@
 .site-header {
     padding: 1rem 0;
     background: $white;
-    // position: fixed;
+    position: fixed;
     top: 0;
     left: 0;
     right: 0;
     z-index: 1000;
-    border-bottom: 2px solid $black;
 
     @include media-breakpoint-up (xl) {
         padding: 1.6rem 0;
@@ -40,6 +39,10 @@
         flex-wrap: wrap;
         align-items: center;
         justify-content: flex-end;
+
+        @include media-breakpoint-up(md) {
+            width: calc(100% - 234px);
+        }
 
         @include media-breakpoint-up(xl) {
             padding-right: 1.7rem;
@@ -80,6 +83,13 @@
                 display: block !important;
                 opacity: 1;
                 visibility: visible;
+                margin-right: auto;
+                margin-left: 0;
+            }
+
+            @include media-breakpoint-up(xxl) {
+                width: 70%;
+                max-width: 658px;
             }
 
             &.show {

@@ -254,15 +254,18 @@ textarea.form-control {
 
 		&-control {
 			background: $gray-800;
-			color: $gray-500;
+			color: $white;
 			padding-right: 2.4625rem;
-
 			margin: 0;
+
+			&::placeholder {
+				color: $white;
+			}
 		}
 
 		&-btn {
 			position: absolute;
-			top: 53%;
+			top: 51%;
 			right: 14px;
 			transform: translateY(-50%);
 			z-index: 3;
@@ -274,11 +277,11 @@ textarea.form-control {
 				outline: none;
 				border: 0;
 				background: transparent;
-				color: rgba($white, .5);
+				color: $white;
 				font-size: .9rem;
 
 				i {
-					color: rgba($white, .5);
+					color: $white;
 				}
 			}
 		}
