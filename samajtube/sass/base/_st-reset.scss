@@ -63,6 +63,7 @@ body {
 	background-color: $body-bg; // 2
 	min-width: 320px;
 	overflow-x: hidden;
+	@include transition();
 }
 
 

@@ -43,6 +43,12 @@
 				overflow-x: hidden;
 				overflow-y: auto;
 				padding-bottom: 70px;
+				-ms-overflow-style: none;
+				scrollbar-width: none;
+
+				&::-webkit-scrollbar {
+					display: none;
+				}
 			}
 		}
 	}
@@ -94,6 +100,7 @@
 	border-top: 1px solid $black;
 	border-right: 1px solid $black;
 	z-index: 1000;
+	@include transition();
 
 	@include media-breakpoint-down(xs) {
 		font-size: 0.75rem;
