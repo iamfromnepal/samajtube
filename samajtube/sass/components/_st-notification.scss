@@ -1,0 +1,60 @@
+.notification {
+	font-size: 1.5rem;
+	position: relative;
+	z-index: 1;
+	display: inline-block;
+	line-height: 1;
+	@include transition();
+	text-decoration: none;
+
+	&:before {
+		position: absolute;
+		content: '';
+		top: -2px;
+		right: -1px;
+		height: 10px;
+		width: 10px;
+		background: $red-100;
+		border-radius: 50%;
+		border: 1px solid $white;
+		z-index: 2;
+	}
+
+	i {
+		display: block;
+	}
+
+	&:hover {
+		transform: scale(1.1);
+
+		i {
+			animation-name: hang;
+			animation-timing-function: linear;
+			animation-duration: 2s;
+			animation-iteration-count: infinite;
+		}
+
+	}
+}
+
+@keyframes hang {
+	0% {
+		transform: rotate(0deg);
+	}
+
+	25% {
+		transform: rotate(15deg);
+	}
+
+	50% {
+		transform: rotate(0deg);
+	}
+
+	75% {
+		transform: rotate(-15deg);
+	}
+
+	100% {
+		transform: rotate(0deg);
+	}
+}

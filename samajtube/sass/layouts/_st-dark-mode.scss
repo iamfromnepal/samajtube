@@ -1,0 +1,85 @@
+
+.darkMode {
+    background-color: $black !important;
+
+    * {
+        color: $white;
+    }
+    
+    a {
+        color: $white;
+        text-decoration: underline;
+    
+        @include hover {
+            color: $white;
+            text-decoration: none;
+        }
+    }
+
+    .site-header {
+        background: $black;
+
+        .site-branding {
+
+            [class^="icon"] {
+                color: $white;
+            }
+        }
+
+        &__right {
+            .searchFromToggle {
+                color: $gray-500;
+            }
+        }
+    }
+
+    .user {
+
+        &__name {
+            color: $white;
+        }
+
+        &__btn {
+            &:before {
+                color: $gray-500;
+            }
+        }
+
+        &__lists {
+            background: rgba($white, .8);
+
+            &:before {
+                border-color: transparent transparent rgba($white, .8) transparent;
+            }
+
+            li {
+                a {
+                    color: $black;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+
+    .notification {
+        color: $gray-500;
+        text-decoration: none;
+
+        &:before {
+            border-color: $black;
+        }
+
+        &:hover {
+            color: $white;
+            text-decoration: none;
+
+            i {
+                color: $white;
+            }
+        }
+
+        i {
+            color: $gray-500;
+        }
+    }
+}

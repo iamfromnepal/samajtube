@@ -1,0 +1,80 @@
+.widget {
+    font-size: 0.6875rem;
+
+    ul {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+    }
+
+    &__title {
+        font-size: 0.6875rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-weight: 600;
+    }
+
+    &__content {
+
+        li {
+            margin-bottom: 1rem;
+
+            @include media-breakpoint-up(xl) {
+                margin-bottom: 2rem;
+            }
+
+            &:last-of-type {
+                margin-bottom: 0;
+            }
+        }
+
+        a {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            color: $gray-500;
+            @include transition();
+            font-weight: 500;
+            font-size: 0.875rem;
+
+            .icon-wrap {
+                height: 32px;
+                width: 32px;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                align-items: center;
+                background: $gray-800;
+                border-radius: 12px;
+                overflow: hidden;
+                @include transition();
+
+                i {
+                    font-size: .9rem;
+                    color: $gray-500;
+                    display: block;
+                    @include transition();
+                }
+            }
+
+            .text {
+                width: calc(100% - 48px);
+                position: relative;
+                top: 1px;
+            }
+
+            &:hover {
+                // color: $white;
+
+                .icon-wrap {
+                    background: $orange;
+
+                    i {
+                        color: $white;
+                    }
+                }
+            }
+        }
+    }
+}

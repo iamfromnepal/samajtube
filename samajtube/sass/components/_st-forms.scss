@@ -238,3 +238,49 @@ textarea.form-control {
 .thank-you-heading {
 	font-size: $form-success-title-font-size;
 }
+
+
+//Header Search Form
+.searchForm {
+	position: relative;
+	z-index: 1;
+	width: 500px;
+
+	.form {
+
+		&-group {
+			margin: 0;
+		}
+
+		&-control {
+			background: $gray-800;
+			color: $gray-500;
+			padding-right: 2.4625rem;
+
+			margin: 0;
+		}
+
+		&-btn {
+			position: absolute;
+			top: 53%;
+			right: 14px;
+			transform: translateY(-50%);
+			z-index: 3;
+
+			button {
+				border: 0;
+				padding: 0;
+				margin: 0;
+				outline: none;
+				border: 0;
+				background: transparent;
+				color: rgba($white, .5);
+				font-size: .9rem;
+
+				i {
+					color: rgba($white, .5);
+				}
+			}
+		}
+	}
+}

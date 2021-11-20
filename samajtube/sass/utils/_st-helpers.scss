@@ -360,3 +360,8 @@
 .sprite {
   @extend %sprite;
 }
+
+#site-wrapper {
+  position: relative;
+  overflow: hidden;
+}
