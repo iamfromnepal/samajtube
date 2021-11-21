@@ -1,3 +1,110 @@
 .sidebar {
     padding: 0 1rem;
 }
+
+.toggleDarkMode {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    box-shadow: none;
+    border: 0;
+    outline: none;
+    color: $gray-500;
+    background-color: $white;
+    padding: .5rem 1rem .5rem;
+    padding-left: 4.4rem;
+    font-size: 0.875rem;
+    z-index: 1;
+    text-align: left;
+    width: 50%;
+    border-top: 1px solid $black;
+    border-right: 1px solid $black;
+    z-index: 1000;
+    @include transition();
+
+    @include media-breakpoint-down(xs) {
+        font-size: 0.75rem;
+        padding-left: 3.8rem;
+        color: $black;
+    }
+
+    &:hover,
+    &:focus {
+        outline: none;
+    }
+
+    &:before,
+    &:after {
+        position: absolute;
+        content: '';
+        top: 4px;
+        left: 5px;
+        z-index: -1;
+        @include transition();
+    }
+
+    &:before {
+        height: 31px;
+        width: 51px;
+        border-radius: 100px;
+        background: $black;
+
+        @include media-breakpoint-down(xs) {
+            top: 5px;
+            height: 25px;
+            width: 46px;
+        }
+    }
+
+    &:after {
+        top: 6px;
+        left: 7px;
+        height: 27px;
+        width: 27px;
+        border-radius: 50%;
+        background: $white;
+
+        @include media-breakpoint-down(xs) {
+            top: 7px;
+            height: 21px;
+            width: 21px;
+        }
+    }
+
+    &.dark {
+        background: $black;
+        border-right: 1px solid $white;
+
+        &:before {
+            background: $purple;
+        }
+
+        &:after {
+            left: 27px;
+        }
+    }
+}
+
+.toggleSidebar {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 50%;
+    background: $white;
+    border: 0;
+    box-shadow: none;
+    padding: .4rem 1rem;
+    border-top: 1px solid $black;
+    z-index: 1000;
+
+    @include media-breakpoint-down(xs) {
+        font-size: 0.75rem;
+        padding: .5rem 1rem;
+    }
+}
+
+body {
+    @include media-breakpoint-down(sm) {
+        padding-bottom: 35px;
+    }
+}

@@ -112,12 +112,28 @@
     .widget {
         border-color: $gray-800;
 
+        &__title {
+            color: $gray-500;
+        }
+
         &__content {
             a {
                 color: $gray-500;
 
                 i {
                     color: $gray-500;
+                }
+
+                .text {
+                    color: $gray-500;
+                }
+
+                &:hover {
+                    color: $white;
+
+                    .text {
+                        color: $white;
+                    }
                 }
             }
         }

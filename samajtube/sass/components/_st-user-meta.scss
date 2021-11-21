@@ -132,3 +132,145 @@
         }
     }
 }
+
+
+.author-meta {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+
+    @include media-breakpoint-up(sm) {
+        margin-top: 0;
+    }
+
+    &+.author-meta {
+        margin-top: 1rem;
+    }
+
+    .headshot {
+        height: 60px;
+        width: 60px;
+    }
+
+    .auth-desc {
+        width: 100%;
+
+        @include media-breakpoint-up(sm) {
+            width: calc(100% - 72px);
+        }
+    }
+
+    &.author-meta--white {
+        color: $white;
+
+        .headshot {
+            &:before {
+                border-color: rgba($white, .5);
+            }
+
+            &:after {
+                border-color: rgba($white, .5);
+            }
+        }
+
+        .metas {
+            span {
+                color: rgba($white, .8);
+
+                &::before {
+                    background: rgba($white, .8);
+                }
+            }
+        }
+    }
+}
+
+.auth-desc {
+    font-size: 0.75rem;
+    line-height: 1.2;
+
+    h6 {
+        font-size: 0.9375rem;
+        font-weight: 400;
+        margin-bottom: 0.4rem;
+    }
+}
+
+.metas {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+
+    span {
+        padding: 0 0.6875rem;
+        position: relative;
+        z-index: 1;
+        font-weight: 400;
+
+        &:first-of-type {
+            padding-left: 0;
+
+            &:before {
+                display: none;
+            }
+        }
+
+        &:before {
+            position: absolute;
+            content: '';
+            top: 50%;
+            left: -1px;
+            height: 2px;
+            width: 2px;
+            transform: translateY(-50%);
+            background: $black;
+        }
+    }
+}
+
+.headshot {
+    position: relative;
+    z-index: 1;
+    display: inline-block;
+    padding: 5px;
+
+    &:before {
+        position: absolute;
+        content: '';
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        border-radius: 50%;
+        border: 1px solid rgba($black, .5);
+    }
+
+    &:after {
+        position: absolute;
+        content: '\e909';
+        font-family: 'icomoon' !important;
+        bottom: 3px;
+        right: 1px;
+        height: 16px;
+        width: 16px;
+        border-radius: 50%;
+        background: $white;
+        border: 1px solid rgba($black, .5);
+        font-size: .4rem;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        padding-top: 1px;
+        color: $black;
+    }
+
+    .img-wrap {
+        border-radius: 50%;
+        height: 50px;
+        width: 50px;
+        overflow: hidden;
+    }
+}
