@@ -4050,9 +4050,9 @@ input[type="button"].btn-block {
 }
 
 .site-header {
-  padding: 1rem 0;
+  padding: .5rem 0;
   background: #fff;
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   right: 0;
@@ -4070,6 +4070,17 @@ input[type="button"].btn-block {
   .site-header {
     box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.1);
   }
+}
+
+.site-header.stick {
+  position: absolute;
+  top: -120%;
+  transition: 1s all linear;
+}
+
+.site-header.stickIt {
+  position: fixed;
+  top: 0;
 }
 
 .site-header > .container {

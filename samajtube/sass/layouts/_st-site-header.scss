@@ -1,7 +1,7 @@
 .site-header {
-    padding: 1rem 0;
+    padding: .5rem 0;
     background: $white;
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     right: 0;
@@ -14,6 +14,17 @@
 
     @include media-breakpoint-down(sm) {
         box-shadow: 0 0 5px 5px rgba($black, .1);
+    }
+
+    &.stick {
+        position: absolute;
+        top: -120%;
+        @include transition(1s);
+
+        &It {
+            position: fixed;
+            top: 0;
+        }
     }
 
     &>.container {
