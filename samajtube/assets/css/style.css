@@ -4372,6 +4372,24 @@ input[type="button"].btn-block {
   }
 }
 
+.block-title h2 {
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+}
+
+@media (min-width: 768px) {
+  .block-title h2 {
+    font-size: 1.5625rem;
+    margin-bottom: 1.75rem;
+  }
+}
+
+@media (min-width: 1600px) {
+  .block-title h2 {
+    margin-bottom: 2.75rem;
+  }
+}
+
 .block {
   margin-bottom: 1.2rem;
 }
@@ -4382,14 +4400,8 @@ input[type="button"].btn-block {
   }
 }
 
-.block-title h2 {
-  margin-bottom: 1.5rem;
-  font-weight: 500;
-}
-
-@media (min-width: 768px) {
-  .block-title h2 {
-    font-size: 1.5625rem;
+@media (min-width: 1600px) {
+  .block:nth-child(2) .block-title h2 {
     margin-bottom: 1.75rem;
   }
 }
@@ -4422,6 +4434,7 @@ input[type="button"].btn-block {
   min-height: 200px;
   border-radius: 20px;
   overflow: hidden;
+  justify-content: flex-start;
 }
 
 @media (min-width: 992px) {
@@ -4430,10 +4443,41 @@ input[type="button"].btn-block {
   }
 }
 
+.cards-wrapper .card-holder--featured .card .title {
+  font-size: 1.125rem;
+  margin-bottom: 1.5rem;
+  color: #fff;
+  display: inline-block;
+  line-height: 1.2;
+}
+
+@media (min-width: 992px) {
+  .cards-wrapper .card-holder--featured .card .title {
+    font-size: 1.875rem;
+    margin-bottom: 6.3rem;
+  }
+}
+
+.cards-wrapper .card-holder--featured .card .holder {
+  width: 100%;
+}
+
+@media (min-width: 1200px) {
+  .cards-wrapper .card-holder--featured .card .holder {
+    max-width: 400px;
+  }
+}
+
 @media (min-width: 1200px) {
   .cards-wrapper .card-holder--featured:first-of-type {
     width: calc(100% - 373px);
     max-width: 100%;
+  }
+}
+
+@media (min-width: 992px) {
+  .cards-wrapper .card-holder--featured:nth-child(2) .card .title {
+    margin-bottom: 3.4rem;
   }
 }
 
@@ -4494,7 +4538,8 @@ input[type="button"].btn-block {
 }
 
 .card-layout__v2 .card .video-duration {
-  top: 20px;
+  top: 10px;
+  right: 10px;
   bottom: auto;
 }
 
@@ -4571,9 +4616,23 @@ input[type="button"].btn-block {
   margin-top: -2px;
 }
 
+.card-layout__v2 .card .auth-desc h6 a {
+  color: #B7B9D2;
+  text-decoration: none;
+}
+
+.card-layout__v2 .card .auth-desc h6 a:hover {
+  color: #fff;
+}
+
 .card-layout__v2 .card .auth-desc .title {
   font-size: 1rem;
   color: #fff;
+  text-decoration: none;
+}
+
+.card-layout__v2 .card .auth-desc .title:hover {
+  text-decoration: underline;
 }
 
 .card-layout__v2 .card .auth-desc.status-online h6:after {
