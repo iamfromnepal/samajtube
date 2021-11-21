@@ -16,6 +16,10 @@
     .site-header {
         background: $black;
 
+        @include media-breakpoint-down(sm) {
+            box-shadow: 0 0 5px 5px rgba($white, .1);
+        }
+
         .site-branding {
 
             [class^="icon"] {
@@ -27,6 +31,12 @@
             .searchFromToggle {
                 color: $gray-500;
             }
+        }
+    }
+
+    .block-title {
+        h2 {
+            color: $gray-1000;
         }
     }
 
@@ -155,11 +165,11 @@
     }
 
     .toggleDarkMode {
-        border-color: $white;
+        border-color: rgba($white, .4);
     }
 
     .toggleSidebar {
         background: $black;
-        border-color: $white;
+        border-color: rgba($white, .4);
     }
 }

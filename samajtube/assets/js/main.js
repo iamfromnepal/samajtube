@@ -59,11 +59,28 @@ jQuery(document).ready(function ($) {
         var ptElm = $('.withSidebar .widget-wrapper, .main-content');
         ptElm.css('padding-top', headerHeight + 5);
         console.log(headerHeight);
+
+        var winScroll = $(window).scrollTop();
+
+        if (winScroll > headerHeight + 20) {
+            header.addClass('stick');
+        } else {
+            header.removeClass('stick');
+        }
+
+        if (winScroll > headerHeight + 150) {
+            header.addClass('stickIt');
+        } else {
+            header.removeClass('stickIt');
+        }
     }
 
     stickyHeader();
 
     setTimeout(stickyHeader, 1000);
+    
+    $(window).on('resize', stickyHeader);
+    $(window).on('scroll', stickyHeader);
 
 
 
