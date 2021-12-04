@@ -3,8 +3,8 @@
     &--block {
         position: relative;
         z-index: 1;
-        min-width: 100px;
-        max-width: 160px;
+        min-width: 6.25rem;
+        max-width: 10rem;
     }
 
     &__btn {
@@ -24,7 +24,7 @@
         text-transform: capitalize;
 
         @include media-breakpoint-up(sm) {
-            min-width: 120px;
+            min-width: 7.5rem;
         }
 
         &:focus {
@@ -45,8 +45,8 @@
     }
 
     &__head {
-        height: 42px;
-        width: 42px;
+        height: 2.625rem;
+        width: 2.625rem;
         overflow: hidden;
         border-radius: 50%;
         margin-right: 0.75rem;
@@ -66,13 +66,13 @@
         position: absolute;
         top: calc(100% + 30px);
         left: 50%;
-        width: 200px;
+        width: 12.5rem;
         transform: translateX(-50%);
         background: rgba($black, .85);
         padding: 0;
         margin: 0;
         list-style: none;
-        box-shadow: 0 0 15px 5px rgba($black, .1);
+        box-shadow: 0 0 0.9375rem 5px rgba($black, .1);
         border-radius: 5px;
         @include transition();
         z-index: 1;
@@ -88,7 +88,7 @@
             width: 0;
             height: 0;
             border-style: solid;
-            border-width: 0 10px 10px 10px;
+            border-width: 0 0.625rem 0.625rem 0.625rem;
             border-color: transparent transparent $black transparent;
             @include transition();
             z-index: -1;
@@ -102,7 +102,7 @@
             visibility: visible;
 
             &:before {
-                top: -10px;
+                top: -0.625rem;
                 opacity: 1;
                 visibility: visible;
             }
@@ -133,7 +133,6 @@
     }
 }
 
-
 .author-meta {
     display: flex;
     flex-wrap: wrap;
@@ -149,20 +148,42 @@
         margin-top: 1rem;
     }
 
-    .headshot {
-        height: 60px;
-        width: 60px;
-    }
+    // .headshot {
+    //     height: 60px;
+    //     width: 60px;
+    // }
 
     .auth-desc {
         width: 100%;
 
         @include media-breakpoint-up(sm) {
-            width: calc(100% - 72px);
+            width: calc(100% - 4.5rem);
         }
     }
 
-    &.author-meta--white {
+    &.twoCol-mob {
+        .auth-desc {
+            width: calc(100% - 4.5rem);
+        }
+    }
+
+    &__lg {
+        .auth-desc {
+            @include media-breakpoint-up(lg) {
+                width: calc(100% - 7.7rem);
+            }
+        }
+
+        &.twoCol-mob {
+            .auth-desc {
+                @include media-breakpoint-up(lg)  {
+                    width: calc(100% - 7.7rem); 
+                }
+            }
+        }
+    }
+
+    &--white {
         color: $white;
 
         .headshot {
@@ -183,6 +204,56 @@
                     background: rgba($white, .8);
                 }
             }
+        }
+    }
+
+    &--cyan {
+        .headshot {
+
+            &:before {
+                border-color: rgba($white, .5);
+            }
+
+            &:after {
+                border-color: $cyan;
+                color: $cyan;
+            }
+        }
+    }
+}
+
+.offset-head-top {
+    .headshot {
+        margin-top: -1.5rem;
+    }
+}
+
+.offset-sm-head-top {
+    .headshot {
+        margin-top: -1.5rem;
+
+        @include media-breakpoint-up(sm) {
+            margin-top: -2.5rem;
+        }
+    }
+}
+
+.offset-lg-head-top {
+    .headshot {
+        margin-top: -1.5rem;
+
+        @include media-breakpoint-up(lg) {
+            margin-top: -3rem;
+        }
+    }
+}
+
+.offset-xl-head-top {
+    .headshot {
+        margin-top: -1.5rem;
+
+        @include media-breakpoint-up(xl) {
+            margin-top: -3.8rem;
         }
     }
 }
@@ -228,6 +299,12 @@
             background: $black;
         }
     }
+
+    .btn-wrap {
+        display: block;
+        width: 100%;
+        padding-top: 0.5rem;
+    }
 }
 
 .headshot {
@@ -235,6 +312,7 @@
     z-index: 1;
     display: inline-block;
     padding: 5px;
+    overflow: hidden;
 
     &:before {
         position: absolute;
@@ -253,8 +331,8 @@
         font-family: 'icomoon' !important;
         bottom: 3px;
         right: 1px;
-        height: 16px;
-        width: 16px;
+        height: 1rem;
+        width: 1rem;
         border-radius: 50%;
         background: $white;
         border: 1px solid rgba($black, .5);
@@ -269,8 +347,34 @@
 
     .img-wrap {
         border-radius: 50%;
-        height: 50px;
-        width: 50px;
+        height: 3.125rem;
+        width: 3.125rem;
         overflow: hidden;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            font-family: 'object-fit: cover;';
+        }
+    }
+
+    &__lg {
+
+        &:after {
+            @include media-breakpoint-up(lg) {
+                height: 1.875rem;
+                width: 1.875rem;
+                font-size: 0.7rem;
+            }
+        }
+
+        .img-wrap {
+
+            @include media-breakpoint-up(lg) {
+                height: 5.625rem;
+                width: 5.625rem;
+            }
+        }
     }
 }

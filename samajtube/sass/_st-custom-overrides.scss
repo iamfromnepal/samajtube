@@ -34,6 +34,8 @@ $gray-900: #252836;
 $gray-1000: #8D8D8D;
 $black: #000 !default;
 
+$dark-gray: #0E0E0E;
+
 $grays: () !default;
 // stylelint-disable-next-line scss/dollar-variable-default
 $grays: map-merge(("100": $gray-100,
@@ -57,7 +59,7 @@ $orange: #FF7551;
 $yellow: #ffc107 !default;
 $green: #28a745 !default;
 $teal: #22B07D;
-$cyan: #17a2b8 !default;
+$cyan: #52BCC8;
 
 $colors: () !default;
 $colors: map-merge(
@@ -398,8 +400,8 @@ $table-border-level:          -6 !default;
 //
 // Shared variables that are reassigned to `$input-` and `$btn-` specific variables.
 
-$input-btn-padding-y:         .375rem !default;
-$input-btn-padding-x:         .75rem !default;
+$input-btn-padding-y:         .475rem !default;
+$input-btn-padding-x:         1.3rem !default;
 $input-btn-font-family:       null !default;
 $input-btn-font-size:         $font-size-base !default;
 $input-btn-line-height:       $line-height-base !default;
@@ -456,7 +458,7 @@ $btn-link-disabled-color:     $gray-600 !default;
 $btn-block-spacing-y:         .5rem !default;
 
 // Allows for customizing button radius independently from global border radius
-$btn-border-radius:           $border-radius !default;
+$btn-border-radius:           0.4375rem !default;
 $btn-border-radius-lg:        $border-radius-lg !default;
 $btn-border-radius-sm:        $border-radius-sm !default;
 

@@ -1,0 +1,117 @@
+.nav {
+    &-tabs {
+        border: 0;
+        margin: 0;
+        background: $dark-gray;
+        border-top: 1px solid rgba($white, .5);
+
+        .nav {
+
+            &-item {
+                padding: .5rem 1.5rem .8rem;
+                background: $dark-gray;
+            }
+
+            &-link {
+                background-color: transparent;
+                position: relative;
+                z-index: 1;
+                padding-bottom: 1rem;
+                border: 0;
+                padding: .3rem 0 .2rem;
+
+                &:before {
+                    position: absolute;
+                    content: '';
+                    left: 0;
+                    bottom: 0;
+                    width: 0;
+                    height: 1px;
+                    background: $blue;
+                    @include transition();
+                }
+
+                &.active,
+                &:hover {
+                    background: transparent;
+                    border: 0;
+                    color: $white;
+
+                    &:before {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.mobDropSm {
+    position: relative;
+    z-index: 1;
+    max-width: 200px;
+    overflow: hidden;
+    cursor: pointer;
+
+    @include media-breakpoint-up(sm) {
+        cursor: default;
+        max-width: 100%;
+    }
+
+    &.open {
+        overflow: visible;
+    }
+
+    .dropBtn {
+        position: absolute;
+        right: .3rem;
+        top: 0;
+        z-index: 2;
+        background: transparent;
+        padding: 0;
+        border: 0;
+        height: 53px;
+        width: 40px;
+
+        @include media-breakpoint-up(sm) {
+            display: none;
+        }
+    }
+
+    &.nav-tabs {
+        @include media-breakpoint-up(sm) {
+            height: auto !important;
+        }
+
+        .nav-item {
+
+            @include media-breakpoint-down(xs) {
+                padding: 0;
+                width: 100%;
+            }
+
+            &.active {
+                order: -1;
+
+                @include media-breakpoint-up(sm) {
+                    order: inherit;
+                }
+            }
+
+            .nav-link {
+                @include media-breakpoint-down(xs) {
+                    padding: 1rem  2.4rem 1rem 1em;
+                    border-bottom: 1px solid rgba($white, .5);
+                }
+
+                &::before {
+                    display: none;
+
+                    @include media-breakpoint-up(sm) {
+                        display: block;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,1 +1,19 @@
 // Banner
+
+.hero {
+    &-block {
+        padding-left: 1rem;
+
+        @include media-breakpoint-up(sm) {
+            padding-left: 2rem;
+        }
+    }
+
+    &-banner {
+        min-height: 135px;
+
+        @include media-breakpoint-up(sm) {
+            min-height: 235px;
+        }
+    }
+}

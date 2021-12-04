@@ -20,9 +20,8 @@ jQuery(document).ready(function ($) {
 
     $(document).on('click', function () {
         $('#toggleForm, .user__lists').removeClass('show');
+        $('.mobDropSm').removeClass('open');
     });
-
-    
 
     function stopeProp(eml) {
         $(eml).on('click', function (e) {
@@ -32,6 +31,7 @@ jQuery(document).ready(function ($) {
 
     stopeProp('#toggleForm');
     stopeProp('.user__lists');
+    stopeProp('.mobDropSm');
 
     $('.searchFromToggle').on('click', function (e) {
         e.stopPropagation();
@@ -80,12 +80,39 @@ jQuery(document).ready(function ($) {
     stickyHeader();
 
     setTimeout(stickyHeader, 1000);
-    
+
     $(window).on('resize', stickyHeader);
     $(window).on('scroll', stickyHeader);
 
 
+    function mobDrop() {
+        var targetChild = $('.mobDropSm').children('.active');
+        var targetChildHeight = targetChild.innerHeight();
+        var dropBtn = $('.mobDropSm').children('.dropBtn');
 
+        $('.mobDropSm').css('height', targetChildHeight);
+
+        dropBtn.on('click', function() {
+            $(this).parent().toggleClass('open');
+        });
+
+        // $('.mobDropSm .nav-item').on('click', function (e) {
+        //     $(this).parent().toggleClass('open');
+        // });
+
+        $('.mobDropSm .nav-link').on('click', function (e) {
+            var height = $(this).parent().innerHeight();
+            var mainParent = $(this).closest('.mobDropSm');
+            var navItems = $('.nav-item');
+
+            navItems.removeClass('active');
+            $(this).parent().addClass('active');
+            mainParent.css('height', height);
+            mainParent.removeClass('open');
+        });
+    }
+
+    mobDrop();
 
     //Sliders
     // slider-col-1
@@ -121,18 +148,18 @@ jQuery(document).ready(function ($) {
         slidesToShow: 3,
         slidesToScroll: 1,
         responsive: [{
-            breakpoint: 992,
-            settings: {
-                slidesToShow: 2
+                breakpoint: 992,
+                settings: {
+                    slidesToShow: 2
+                }
+            },
+            {
+                breakpoint: 767,
+                settings: {
+                    slidesToShow: 1,
+                    adaptiveHeight: true,
+                }
             }
-        },
-        {
-            breakpoint: 767,
-            settings: {
-                slidesToShow: 1,
-                adaptiveHeight: true,
-            }
-        }
         ]
     });
 
@@ -144,24 +171,24 @@ jQuery(document).ready(function ($) {
         slidesToShow: 4,
         slidesToScroll: 1,
         responsive: [{
-            breakpoint: 1200,
-            settings: {
-                slidesToShow: 3
+                breakpoint: 1200,
+                settings: {
+                    slidesToShow: 3
+                }
+            },
+            {
+                breakpoint: 992,
+                settings: {
+                    slidesToShow: 2
+                }
+            },
+            {
+                breakpoint: 575,
+                settings: {
+                    slidesToShow: 1,
+                    adaptiveHeight: true,
+                }
             }
-        },
-        {
-            breakpoint: 992,
-            settings: {
-                slidesToShow: 2
-            }
-        },
-        {
-            breakpoint: 575,
-            settings: {
-                slidesToShow: 1,
-                adaptiveHeight: true,
-            }
-        }
         ]
     });
 
@@ -173,33 +200,33 @@ jQuery(document).ready(function ($) {
         slidesToShow: 6,
         slidesToScroll: 6,
         responsive: [{
-            breakpoint: 1200,
-            settings: {
-                slidesToShow: 4,
-                slidesToScroll: 4,
+                breakpoint: 1200,
+                settings: {
+                    slidesToShow: 4,
+                    slidesToScroll: 4,
+                }
+            },
+            {
+                breakpoint: 992,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 3,
+                }
+            },
+            {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2,
+                }
+            },
+            {
+                breakpoint: 575,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                }
             }
-        },
-        {
-            breakpoint: 992,
-            settings: {
-                slidesToShow: 3,
-                slidesToScroll: 3,
-            }
-        },
-        {
-            breakpoint: 768,
-            settings: {
-                slidesToShow: 2,
-                slidesToScroll: 2,
-            }
-        },
-        {
-            breakpoint: 575,
-            settings: {
-                slidesToShow: 1,
-                slidesToScroll: 1,
-            }
-        }
         ]
     });
 
