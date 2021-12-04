@@ -22,6 +22,8 @@ jQuery(document).ready(function ($) {
         $('#toggleForm, .user__lists').removeClass('show');
     });
 
+    
+
     function stopeProp(eml) {
         $(eml).on('click', function (e) {
             e.stopPropagation();

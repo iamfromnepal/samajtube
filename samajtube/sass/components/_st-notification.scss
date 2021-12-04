@@ -6,6 +6,8 @@
 	line-height: 1;
 	@include transition();
 	text-decoration: none;
+	color: $black;
+	text-decoration: none;
 
 	&:before {
 		position: absolute;
@@ -26,6 +28,8 @@
 
 	&:hover {
 		transform: scale(1.1);
+		text-decoration: none;
+		color: $black;
 
 		i {
 			animation-name: hang;
