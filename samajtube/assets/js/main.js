@@ -20,7 +20,7 @@ jQuery(document).ready(function ($) {
 
     $(document).on('click', function () {
         $('#toggleForm, .user__lists').removeClass('show');
-        $('.mobDropSm').removeClass('open');
+        // $('.mobDropSm').removeClass('open');
     });
 
     function stopeProp(eml) {
@@ -31,7 +31,7 @@ jQuery(document).ready(function ($) {
 
     stopeProp('#toggleForm');
     stopeProp('.user__lists');
-    stopeProp('.mobDropSm');
+    // stopeProp('.mobDropSm');
 
     $('.searchFromToggle').on('click', function (e) {
         e.stopPropagation();
@@ -109,6 +109,8 @@ jQuery(document).ready(function ($) {
             $(this).parent().addClass('active');
             mainParent.css('height', height);
             mainParent.removeClass('open');
+
+            $('#slick-slider').slick('refresh');
         });
     }
 
@@ -241,4 +243,10 @@ jQuery(document).ready(function ($) {
     }];
     //Options Init
     $('.your-class').slick('slickSetOption', 'responsive', yourOption, true);
+
+    $('.mobDropSm .nav-link').on('click', function () {
+        setTimeout(function() {
+            $('.card-slider').slick('refresh');
+        }, 200);
+    });
 });

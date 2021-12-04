@@ -52,10 +52,16 @@
     max-width: 200px;
     overflow: hidden;
     cursor: pointer;
+    border-radius: 15px;
 
     @include media-breakpoint-up(sm) {
         cursor: default;
         max-width: 100%;
+        border-radius: 0;
+    }
+
+    @include media-breakpoint-down(xs)  {
+        border: 0;
     }
 
     &.open {
@@ -65,7 +71,7 @@
     .dropBtn {
         position: absolute;
         right: .3rem;
-        top: 0;
+        top: 4px;
         z-index: 2;
         background: transparent;
         padding: 0;
@@ -75,6 +81,15 @@
 
         @include media-breakpoint-up(sm) {
             display: none;
+        }
+
+        &::before {
+            position: absolute;
+            content: '';
+            top: 0;
+            bottom: 0;
+            left: -200px;
+            right: 0;z-index: -1;
         }
     }
 
@@ -92,16 +107,20 @@
 
             &.active {
                 order: -1;
+                margin-bottom: .5rem;
+                border-radius: 15px;
 
                 @include media-breakpoint-up(sm) {
                     order: inherit;
+                    margin-bottom: 0;
+                    border-radius: 0;
                 }
             }
 
             .nav-link {
                 @include media-breakpoint-down(xs) {
                     padding: 1rem  2.4rem 1rem 1em;
-                    border-bottom: 1px solid rgba($white, .5);
+                    // border-bottom: 1px solid rgba($white, .5);
                 }
 
                 &::before {

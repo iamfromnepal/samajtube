@@ -172,4 +172,10 @@
         background: $black;
         border-color: rgba($white, .4);
     }
+
+    .tab-content {
+        a {
+            text-decoration: underline;
+        }
+    }
 }
