@@ -60,7 +60,6 @@ jQuery(document).ready(function ($) {
         var headerHeight = header.innerHeight();
         var ptElm = $('.withSidebar .widget-wrapper, .main-content');
         ptElm.css('padding-top', headerHeight + 5);
-        console.log(headerHeight);
 
         var winScroll = $(window).scrollTop();
 
@@ -92,7 +91,7 @@ jQuery(document).ready(function ($) {
 
         $('.mobDropSm').css('height', targetChildHeight);
 
-        dropBtn.on('click', function() {
+        dropBtn.on('click', function () {
             $(this).parent().toggleClass('open');
         });
 
@@ -245,8 +244,61 @@ jQuery(document).ready(function ($) {
     $('.your-class').slick('slickSetOption', 'responsive', yourOption, true);
 
     $('.mobDropSm .nav-link').on('click', function () {
-        setTimeout(function() {
+        setTimeout(function () {
             $('.card-slider').slick('refresh');
         }, 200);
     });
+
+
+    //Floating Label
+    function floatingLable() {
+        var mainParent = $('.floating-label');
+        var inputElm = mainParent.children('.form-control');
+        inputElm.val('');
+
+        // inputElm.each(function () {
+        //     var inputVal = inputElm.val();
+
+        //     if (inputVal === '') {
+        //         var floatLabel = $(this).next('.form-label');
+        //         floatLabel.removeClass('float');
+        //         console.log('empty');
+        //     } else {
+        //         var floatLabel = $(this).next('.form-label');
+        //         floatLabel.addClass('float');
+        //         console.log(inputVal);
+        //     }
+        // });
+
+        // floatClass();
+
+        inputElm.keypress(function () {
+            var floatLabel = $(this).next('.form-label');
+            var inputVal = $(this).val();
+            console.log('pressed');
+
+            if (inputVal === '') {
+                floatLabel.removeClass('float');
+            } else {
+                floatLabel.addClass('float');
+            }
+
+        });
+
+        inputElm.change(function () {
+            var floatLabel = $(this).next('.form-label');
+            var inputVal = $(this).val();
+            console.log('pressed');
+
+            if (inputVal === '') {
+                floatLabel.removeClass('float');
+            } else {
+                floatLabel.addClass('float');
+            }
+        });
+    }
+
+    floatingLable();
+
+    setTimeout(floatingLable, 1000);
 });

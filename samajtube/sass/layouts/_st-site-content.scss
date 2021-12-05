@@ -359,6 +359,7 @@
 .has-shortInfo {
 	position: relative;
 	z-index: 1;
+	overflow: visible !important;
 
 	.info {
 		position: absolute;

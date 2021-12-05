@@ -50,6 +50,7 @@ $grays: map-merge(("100": $gray-100,
 	$grays);
 
 $blue: #08A0F7;
+$dark-blue: #0C31F1;
 $indigo: #6610f2 !default;
 $purple: #6C5ECF;
 $pink: #e83e8c !default;
@@ -127,7 +128,7 @@ $escaped-characters: (
 
 // Options
 //
-// Quickly modify global styling by enabling or disabling optional features.
+// Quickly modify globa0E30El styling by enabling or disabling optional features.
 
 $enable-caret:                                true !default;
 $enable-rounded:                              true !default;
@@ -139,7 +140,7 @@ $enable-hover-media-query:                    false !default; // Deprecated, no 
 $enable-grid-classes:                         true !default;
 $enable-pointer-cursor-for-buttons:           true !default;
 $enable-print-styles:                         true !default;
-$enable-responsive-font-sizes:                false !default;
+$enable-responsive-font-sizes:                true;
 $enable-validation-icons:                     true !default;
 $enable-deprecation-messages:                 true !default;
 

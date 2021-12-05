@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+		integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+	<link rel="stylesheet" href="vendors/slick/slick.css">
+	<link rel="stylesheet" href="assets/css/style.css">
+	<title>SamajTube</title>
+</head>
+
+<body class="darkMode login-signup">
+	<div id="site-wrapper">
+		<header id="header" class="site-header">
+			<div class="container">
+				<div class="site-branding">
+					<a href="#">
+						<span class="icon-site-logo"></span>
+					</a>
+				</div><!-- /.site-logo -->
+
+				<div class="site-header__right">
+					<span class="icon-magnifier searchFromToggle"></span>
+					<div class="form-block" id="toggleForm">
+						<form action="#" class="searchForm form">
+							<div class="form-group">
+								<input type="text" class="form-control" placeholder="Search artists, songs, albums">
+							</div><!-- /.form-group -->
+
+							<div class="form-btn">
+								<button type="submit" class="submitBtn">
+									<i class="icon-magnifier"></i>
+								</button>
+							</div><!-- /.btn-wrap -->
+						</form>
+					</div><!-- /.form-block -->
+
+					<div class="user user--block">
+						<button class="user__btn">
+							<span class="user__head"><img src="assets/images/avatar-sm.jpg" alt="Ram"></span>
+							<span class="user__name">Sudhan Shahi</span>
+						</button><!-- /.user__btn -->
+						<ul class="user__lists">
+							<li>
+								<a href="#">Profile</a>
+							</li>
+
+							<li>
+								<a href="#">Messages</a>
+							</li>
+
+							<li>
+								<a href="#">Settings</a>
+							</li>
+
+							<li>
+								<a href="#">Channel</a>
+							</li>
+						</ul><!-- /.user__lists -->
+					</div><!-- /.user-block -->
+
+					<a href="#" class="notification active">
+						<i class="icon-notification-bell"></i>
+					</a><!-- /.notification -->
+				</div><!-- /.site-header__right -->
+			</div>
+		</header> <!-- / .site-header -->
+
+		<main id="main" class="site-content">
+			<div class="container">
+				<div class="row block mb-0">
+					<div class="col-lg-6 pr-lg-5 left-block">
+						<div class="holder">
+							<div class="site-branding pb-4 pb-md-5">
+								<a href="#">
+									<span class="icon-site-logo"></span>
+								</a>
+							</div><!-- /.site-logo -->
+							<div class="logsign-form formLayout__default">
+								<form action="#" class="form">
+									<div class="login">
+
+										<div class="block-title pb-3 pb-md-5">
+											<h1>Join our community!</h1>
+										</div>
+
+										<div class="desc pb-md-5">
+											<p>Welcome back! Please login to your account.</p>
+										</div>
+
+										<div class="form-row">
+											<div class="col-md-6 col-lg-12">
+												<div class="form-group floating-label">
+													<input type="text" class="form-control" id="log-email"
+														name="log-email">
+													<label for="#log-email" class="form-label">Email Address</label>
+												</div>
+											</div>
+
+											<div class="col-md-6 col-lg-12">
+												<div class="form-group floating-label">
+													<input type="password" class="form-control" id="log-pass"
+														name="log-pass">
+													<label for="#log-pass" class="form-label">Password</label>
+												</div>
+											</div>
+										</div>
+
+										<div class="form-row">
+											<div class="col-sm-6 mb-3 mb-sm-0">
+												<div class="form-group mb-0 form-check">
+													<input type="checkbox" class="form-check-input" id="log-check">
+													<label class="form-check-label" for="log-check">Remember me</label>
+												</div>
+											</div>
+											<div class="col-sm-6 text-sm-right">
+												<button type="button" class="btn-reset-default">Forget
+													Password?</button>
+											</div>
+										</div>
+										<div class="form-footer pt-4">
+											<div class="btn-wrap">
+												<button type="submit"
+													class="btn btn-primary mr-4 mr-lg-5 rounded-ovel bg-white color-black">Login</button>
+												<button type="submit"
+													class="btn btn-secondary rounded-ovel">Signup</button>
+											</div>
+										</div>
+									</div>
+
+									<div class="signup d-none">
+										<div class="block-title pb-3 pb-md-5">
+											<h1 class="h1">Join our community!</h1>
+										</div>
+
+										<div class="desc pb-md-5">
+											<p>Fill out the form below to get started.</p>
+										</div>
+
+										<div class="form-row">
+											<div class="col-md-6 col-lg-12">
+												<div class="form-group floating-label">
+													<input type="text" class="form-control" id="firstname"
+														name="firstname">
+													<label for="#firstname" class="form-label">First Name</label>
+												</div>
+											</div>
+
+											<div class="col-md-6 col-lg-12">
+												<div class="form-group floating-label">
+													<input type="text" class="form-control" id="lastname"
+														name="lastname">
+													<label for="#lastname" class="form-label">Last Name</label>
+												</div>
+											</div>
+										</div>
+
+										<div class="form-row">
+											<div class="col-md-6 col-lg-12">
+												<div class="form-group floating-label">
+													<input type="text" class="form-control" id="sign-email"
+														name="sign-email">
+													<label for="#sign-email" class="form-label">Email Address</label>
+												</div>
+											</div>
+
+											<div class="col-md-6 col-lg-12">
+												<div class="form-group floating-label">
+													<input type="password" class="form-control" id="phone" name="phone">
+													<label for="#phone" class="form-label">Phone Number</label>
+												</div>
+											</div>
+										</div>
+
+										<div class="form-row">
+											<div class="col-md-6 col-lg-12">
+												<div class="form-group floating-label">
+													<input type="password" class="form-control" id="sign-pass"
+														name="sign-pass">
+													<label for="#sign-pass" class="form-label">Password</label>
+												</div>
+											</div>
+
+											<div class="col-md-6 col-lg-12">
+												<div class="form-group floating-label">
+													<input type="password" class="form-control" id="conf-pass"
+														name="conf-pass">
+													<label for="#conf-pass" class="form-label">Confirm Password</label>
+												</div>
+											</div>
+										</div>
+
+										<div class="form-row">
+											<div class="col-sm-6 mb-3 mb-sm-0">
+												<div class="form-group mb-0 form-check">
+													<input type="checkbox" class="form-check-input" id="log-check">
+													<label class="form-check-label" for="log-check">Remember me</label>
+												</div>
+											</div>
+											<div class="col-sm-6 text-sm-right">
+												<button type="button" class="btn-reset-default">Forget
+													Password?</button>
+											</div>
+										</div>
+										<div class="form-footer pt-4">
+											<div class="btn-wrap">
+												<button type="submit"
+													class="btn btn-primary mr-4 mr-lg-5 rounded-ovel bg-white color-black">Login</button>
+												<button type="submit"
+													class="btn btn-secondary rounded-ovel">Signup</button>
+											</div>
+										</div>
+									</div>
+								</form>
+								<div class="social-block pt-4 pt-md-5 border-top mt-5">
+									<ul>
+										<li class="text mr-4">Or login with</li>
+										<li class="facebook mr-4">
+											<button type="button" class="btn btn-primary">
+												<i class="fab fa-facebook-f"></i>
+												<span class="text">Facebook</span>
+											</button>
+										</li>
+										<li class="facebook mr-4">
+											<button type="button" class="btn btn-info">
+												<i class="fab fa-google"></i>
+												<span class="text">Google</span>
+											</button>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div
+						class="col-lg-6 right-block d-flex flex-direction-row flex-wrap justify-content-center justify-content-lg-start">
+						<ul class="navigation mb-md-4 mb-lg-0">
+							<li class="active">
+								<a href="#">Home</a>
+							</li>
+							<li>
+								<a href="#">About Us</a>
+							</li>
+							<li>
+								<a href="#">Blog</a>
+							</li>
+						</ul>
+						<div class="block-thumb img-wrap d-none d-md-block">
+							<img src="assets/images/singing-girl.png" alt="Singing Girl">
+						</div>
+					</div>
+				</div>
+			</div>
+		</main> <!-- / .site-content -->
+
+		<footer id="footer" class="site-footer">
+		</footer> <!-- / .site-footer -->
+
+		<button type="button" class="toggleDarkMode dark d-md-none">
+			<span>Night Mode</span>
+		</button>
+
+		<button type="button" class="toggleSidebar d-md-none"><span>Menu</span></button>
+	</div><!-- /#site-wrapper -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="vendors/slick/slick.js"></script>
+	<script src="assets/js/bundle.js"></script>
+</body>
+
+</html>

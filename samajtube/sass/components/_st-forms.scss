@@ -53,6 +53,19 @@
 	}
 }
 
+.form-check {
+	padding-left: 1.7rem;
+	position: relative;
+
+	&-input {
+		left: 0;
+		margin-left: 0;
+	}
+
+	&-label {
+		cursor: pointer;
+	}
+}
 
 //Header Search Form
 .searchForm {
@@ -96,6 +109,83 @@
 
 				i {
 					color: $white;
+				}
+			}
+		}
+	}
+}
+
+.formLayout {
+	&__default {
+		.form-control {
+			background: $gray-900;
+			height: 50px;
+			color: $white;
+			border-color: rgba($white, .2);
+			border-radius: 100px;
+		}
+	}
+}
+
+.floating-label {
+	position: relative;
+	z-index: 1;
+	margin-bottom: 1.2rem;
+	background: $gray-900;
+	color: $white;
+	border-color: rgba($white, .2);
+	border-radius: 100px;
+
+	@include media-breakpoint-up(md) {
+		margin-bottom: 1.4rem;	
+	}
+
+	.form-label {
+		position: absolute;
+		z-index: 1;
+		top: 50%;
+		left: 30px;
+		@include transition();
+		transform: translateY(-50%);
+		padding: 0 5px;
+		display: inline-block;
+		margin: 0;
+		line-height: 1;
+
+		&:before {
+			position: absolute;
+			content: '';
+			top: 50%;
+			// transform: translateY(-50%);
+			bottom: 0;
+			left: 0;
+			right: 0;
+			background: $gray-900;
+			z-index: -1;
+		}
+
+		&.float {
+			top: 0;
+		}
+	}
+
+	.form-control {
+		background: transparent;
+		border: 0;
+		position: relative;
+		z-index: 3;
+		height: 50px;
+		padding: 0.625rem 1.875rem;
+
+		@include media-breakpoint-up(md) {
+			height: 3.75rem;
+		}
+
+		&:focus,
+		&:not(:empty) {
+			~ {
+				.form-label {
+					top: 0;
 				}
 			}
 		}

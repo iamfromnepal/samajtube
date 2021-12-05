@@ -1,1 +1,49 @@
 // Navigation
+
+.navigation {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    text-align: center;
+
+    li {
+        display: inline-block;
+        vertical-align: middle;
+        padding: 0 1rem;
+        position: relative;
+        z-index: 1;
+
+        a {
+            display: block;
+            position: relative;
+            z-index: 1;
+            padding-bottom: 0.3rem;
+            text-decoration: none;
+
+            &:before {
+                position: absolute;
+                content: '';
+                bottom: 0;
+                left: 0;
+                width: 0;
+                height: 2px;
+                background: $dark-blue;
+                @include transition();
+            }
+
+            &:hover {
+                &:before {
+                    width: 100%;
+                }
+            }
+        }
+
+        &.active {
+            a {
+                &:before {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}

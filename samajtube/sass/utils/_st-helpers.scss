@@ -24,6 +24,7 @@
 
 img {
 	max-width: 100%;
+	height: auto;
 }
 
 // Fonts
@@ -70,6 +71,14 @@ ol {
 	}
 }
 
+.rounded-ovel {
+	border-radius: 100px !important;
+}
+
+.color-black {
+	color: $black !important;
+}
+
 .video-duration {
 	display: inline-block;
 	line-height: 1;
@@ -80,4 +89,12 @@ ol {
 	background: rgba($gray-700, .5);
 	color: $white;
 	letter-spacing: 1px;
+}
+
+.btn-reset-default {
+	border: 0;
+	padding: 0;
+	background: transparent;
+	box-shadow:none;
+	outline: none;
 }
