@@ -18,10 +18,11 @@ jQuery(document).ready(function ($) {
         }
     });
 
+    //Match Height
     $('.fix-height,[data-fix="height"]').matchHeight();
 
     $(document).on('click', function () {
-        $('#toggleForm, .user__lists').removeClass('show');
+        $('#toggleForm, .user__lists,.notification--list').removeClass('show');
         // $('.mobDropSm').removeClass('open');
     });
 
@@ -33,30 +34,41 @@ jQuery(document).ready(function ($) {
 
     stopeProp('#toggleForm');
     stopeProp('.user__lists');
-    // stopeProp('.mobDropSm');
+    stopeProp('.notification');
 
+    //Notification Toggle
+    $('.notificationToggle').on('click', function (e) {
+        e.stopPropagation();
+        $(this).next('.notification--list').toggleClass('show');
+    });
+
+    //Search form toggle
     $('.searchFromToggle').on('click', function (e) {
         e.stopPropagation();
-        console.log('clicked');
         $('#toggleForm').toggleClass('show');
     });
 
-
+    //User toggle
     $('.user__btn').on('click', function (e) {
         e.stopPropagation();
         console.log('clicked');
         $('.user__lists').toggleClass('show');
     });
 
+    //DarkMode Toggle
     $('.toggleDarkMode').on('click', function () {
         $('.toggleDarkMode').toggleClass('dark');
         $('body').toggleClass('darkMode');
     });
 
+
+    //SideBar Toggle
     $('.toggleSidebar').on('click', function () {
         $('.withSidebar .sidebar').toggleClass('show');
     });
 
+
+    //Sitcky Header
     function stickyHeader() {
         var header = $('.site-header');
         var headerHeight = header.innerHeight();
@@ -85,7 +97,7 @@ jQuery(document).ready(function ($) {
     $(window).on('resize', stickyHeader);
     $(window).on('scroll', stickyHeader);
 
-
+    //Accordion for mobile
     function mobDrop() {
         var targetChild = $('.mobDropSm').children('.active');
         var targetChildHeight = targetChild.innerHeight();
@@ -96,10 +108,6 @@ jQuery(document).ready(function ($) {
         dropBtn.on('click', function () {
             $(this).parent().toggleClass('open');
         });
-
-        // $('.mobDropSm .nav-item').on('click', function (e) {
-        //     $(this).parent().toggleClass('open');
-        // });
 
         $('.mobDropSm .nav-link').on('click', function (e) {
             var height = $(this).parent().innerHeight();
@@ -257,22 +265,6 @@ jQuery(document).ready(function ($) {
         var mainParent = $('.floating-label');
         var inputElm = mainParent.children('.form-control');
         inputElm.val('');
-
-        // inputElm.each(function () {
-        //     var inputVal = inputElm.val();
-
-        //     if (inputVal === '') {
-        //         var floatLabel = $(this).next('.form-label');
-        //         floatLabel.removeClass('float');
-        //         console.log('empty');
-        //     } else {
-        //         var floatLabel = $(this).next('.form-label');
-        //         floatLabel.addClass('float');
-        //         console.log(inputVal);
-        //     }
-        // });
-
-        // floatClass();
 
         inputElm.keypress(function () {
             var floatLabel = $(this).next('.form-label');

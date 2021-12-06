@@ -24,20 +24,112 @@
 
 	i {
 		display: block;
+		cursor: pointer;
+		@include transition();
 	}
 
 	&:hover {
-		transform: scale(1.1);
 		text-decoration: none;
 		color: $black;
 
-		i {
+		&>i {
+			transform: scale(1.1);
 			animation-name: hang;
 			animation-timing-function: linear;
 			animation-duration: 2s;
 			animation-iteration-count: infinite;
 		}
 
+	}
+
+	&--list {
+		position: absolute;
+		top: 50px;
+		right: -43px;
+		width: 280px;
+		background-color: $black;
+		box-shadow: 0 0 5px 5px rgba($white, .1);
+		border-radius: 5px;
+		overflow: hidden;
+		padding-bottom: 2.3rem;
+		@include transition();
+		opacity: 0;
+		visibility: hidden;
+		border: 1px solid rgba($white, .2);
+
+		@include media-breakpoint-up(md) {
+			right: 0;
+			width: 300px;
+		}
+
+		&.show {
+			top: 30px;
+			opacity: 1;
+			visibility: visible;
+		}
+
+		ul {
+			padding: 0;
+			margin: 0;
+			list-style-type: none;
+
+			a:not(.btn) {
+				font-size: 0.75rem;
+				font-weight: normal;
+				padding: .5rem 1rem;
+				display: block;
+				@include transition();
+				border-bottom: 1px solid rgba($white, .2);
+				line-height: 1.4;
+
+				&:hover {
+					background: rgba($white, .2);
+					text-decoration: none;
+					border-color: transparent;
+				}
+			}
+
+			li {
+				&:last-of-type {
+					a {
+						border-color: transparent;
+					}
+				}
+			}
+		}
+
+		.btn {
+			background-color: $blue;
+			padding: .5rem;
+			border: 0;
+			color: $white;
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			z-index: 11;
+			border-radius: 0;
+			font-size: 13px;
+
+			i {
+				color: $white;
+				animation: none;
+				display: inline-block;
+				margin-left: .1rem;
+				transform: translateX(-20px);
+				@include transition();
+				opacity: 0;
+				visibility: hidden;
+			}
+
+			&:hover {
+				i {
+					transform: translateX(0);
+					opacity: 1;
+					visibility: visible;
+				}
+			}
+		}
 	}
 }
 

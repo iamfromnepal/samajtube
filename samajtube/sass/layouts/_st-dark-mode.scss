@@ -105,17 +105,25 @@
             border-color: $black;
         }
 
+        &>i {
+            color: $gray-500;
+        }
+
         &:hover {
             color: $white;
             text-decoration: none;
 
-            i {
+            &>i {
                 color: $white;
             }
         }
 
-        i {
-            color: $gray-500;
+        &--list {
+            .btn {
+                i {
+                    color: $white;
+                }
+            }
         }
     }
 
