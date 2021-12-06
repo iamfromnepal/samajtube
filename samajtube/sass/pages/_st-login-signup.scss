@@ -11,13 +11,6 @@
         padding: 0 1rem;
     }
 
-    .site-branding {
-        a {
-            font-size: 1.8rem;
-            text-decoration: none;
-        }
-    }
-
     .navigation {
         @include media-breakpoint-up(lg) {
             text-align: left;

@@ -17,6 +17,13 @@
 	background-color: $input-bg;
 	background-clip: padding-box;
 	border: $input-border-width solid $input-border-color;
+	resize: none;
+	-webkit-appreance: none;
+	appearance: none;
+
+	&::-ms-expand {
+		display: none;
+	}
 
 	// Note: This has no effect on <select>s in some browsers, due to the limited stylability of `<select>`s in CSS.
 	@include border-radius($input-border-radius, 0);
@@ -50,6 +57,12 @@
 		background-color: $input-disabled-bg;
 		// iOS fix for unreadable disabled content; see https://github.com/twbs/bootstrap/issues/11655.
 		opacity: 1;
+	}
+}
+
+textarea {
+	&.form-control {
+		height: 185px;
 	}
 }
 
@@ -131,13 +144,17 @@
 	position: relative;
 	z-index: 1;
 	margin-bottom: 1.2rem;
-	background: $gray-900;
+	background: $black-100;
 	color: $white;
 	border-color: rgba($white, .2);
 	border-radius: 100px;
 
 	@include media-breakpoint-up(md) {
-		margin-bottom: 1.4rem;	
+		margin-bottom: 1.4rem;
+	}
+
+	&.radius-sm {
+		border-radius: 20px;
 	}
 
 	.form-label {
@@ -160,7 +177,7 @@
 			bottom: 0;
 			left: 0;
 			right: 0;
-			background: $gray-900;
+			background: $black-100;
 			z-index: -1;
 		}
 
@@ -176,6 +193,7 @@
 		z-index: 3;
 		height: 50px;
 		padding: 0.625rem 1.875rem;
+		border-radius: 0;
 
 		@include media-breakpoint-up(md) {
 			height: 3.75rem;
@@ -189,5 +207,48 @@
 				}
 			}
 		}
+	}
+
+	textarea {
+		&.form-control {
+			height: 185px;
+			padding: 1.075rem 1.875rem;
+		}
+	}
+
+	&.textField {
+		.form-label {
+			top: 30px;
+		}
+	}
+
+}
+
+.customFileUpload {
+	position: relative;
+	z-index: 1;
+	max-width: 450px;
+	margin: 0 auto;
+
+	.form-label {
+		font-size: 1.125rem;
+		height: 145px;
+		width: 100%;
+		border-radius: 100px;
+		border: 1px dashed #fff;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		cursor: pointer;
+		padding: 2rem;
+		text-align: center;
+	}
+
+	input[type="file"] {
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		opacity: 0;
+		visibility: hidden;
 	}
 }

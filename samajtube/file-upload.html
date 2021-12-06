@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+		integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+	<link rel="stylesheet" href="vendors/slick/slick.css">
+	<link rel="stylesheet" href="assets/css/style.css">
+	<title>SamajTube</title>
+</head>
+
+<body class="darkMode upload-page">
+	<div id="site-wrapper">
+		<header id="header" class="site-header d-none">
+			<div class="container">
+				<div class="site-branding">
+					<a href="#">
+						<span class="icon-site-logo"></span>
+					</a>
+				</div><!-- /.site-logo -->
+
+				<div class="site-header__right">
+					<span class="icon-magnifier searchFromToggle"></span>
+					<div class="form-block" id="toggleForm">
+						<form action="#" class="searchForm form">
+							<div class="form-group">
+								<input type="text" class="form-control" placeholder="Search artists, songs, albums">
+							</div><!-- /.form-group -->
+
+							<div class="form-btn">
+								<button type="submit" class="submitBtn">
+									<i class="icon-magnifier"></i>
+								</button>
+							</div><!-- /.btn-wrap -->
+						</form>
+					</div><!-- /.form-block -->
+
+					<div class="user user--block">
+						<button class="user__btn">
+							<span class="user__head"><img src="assets/images/avatar-sm.jpg" alt="Ram"></span>
+							<span class="user__name">Sudhan Shahi</span>
+						</button><!-- /.user__btn -->
+						<ul class="user__lists">
+							<li>
+								<a href="#">Profile</a>
+							</li>
+
+							<li>
+								<a href="#">Messages</a>
+							</li>
+
+							<li>
+								<a href="#">Settings</a>
+							</li>
+
+							<li>
+								<a href="#">Channel</a>
+							</li>
+						</ul><!-- /.user__lists -->
+					</div><!-- /.user-block -->
+
+					<a href="#" class="notification active">
+						<i class="icon-notification-bell"></i>
+					</a><!-- /.notification -->
+				</div><!-- /.site-header__right -->
+			</div>
+		</header> <!-- / .site-header -->
+
+		<main id="main" class="site-content">
+			<div class="container">
+				<div class="row block mb-0 border-mid-y border-mid-y-lg">
+					<div class="col-lg-6 left-block">
+						<div class="top-holder pt-ext-large">
+							<div class="site-branding site-branding__md pb-4 pl-lg-4">
+								<a href="#">
+									<span class="icon-site-logo"></span>
+								</a>
+							</div><!-- /.site-logo -->
+
+							<div class="holder bg-fd-gray width-sm d-flex flex-direction-row justify-content-between flex-wrap"
+								data-fix="height">
+								<div class="form-title pb-3 w-100">
+									<h2>Upload Video</h2>
+									<p>Upload video below. Duration must be less than 10 min.</p>
+								</div><!-- /.form-title -->
+
+								<div class="upload-form formLayout__default w-100">
+									<form action="#" class="form">
+										<div class="form-group customFileUpload">
+											<input type="file" class="form-control" id="fileupload" name="fileupload">
+											<label for="fileupload" class="form-label">Choose or drag and drop
+												video</label>
+										</div>
+									</form>
+								</div><!-- /.upload-form -->
+
+								<div class="text-wrap pt-5 pt-lg-0 w-100">
+									<p>By submitting your videos to Samajtube, you acknowledge that you agree to
+										Samajtube'sTerms of Service.</p>
+									<p>Please be sure not to violate others' copyright or privacy rights. <a
+											href="#">Learn more</a></p>
+								</div>
+							</div><!-- /.holder -->
+						</div><!-- /.top-holder -->
+					</div>
+
+					<div class="col-lg-6 right-block">
+						<div class="top-holder pt-ext-large">
+							<div class="site-branding site-branding__md pb-4 pl-lg-4 opacity-0 d-none d-lg-block">
+								<a href="#">
+									<span class="icon-site-logo"></span>
+								</a>
+							</div><!-- /.site-logo -->
+
+							<div class="holder bg-fd-gray width-sm" data-fix="height">
+								<div class="form-title pb-3 pb-lg-5">
+									<h2>Upload Video</h2>
+									<p>Upload video below. Duration must be less than 10 min.</p>
+								</div><!-- /.form-title -->
+
+								<div class="upload-form formLayout__default">
+									<form action="#" class="form">
+										<div class="video-intro ml-0 mb-4">
+											<h6>Video Intro</h6>
+											<div class="video-wrap">
+												<video width="390" height="155">
+													<source src="movie.mp4" type="video/mp4">
+													<source src="movie.ogg" type="video/ogg">
+												</video>
+												<button type="button" class="play-button btn-reset-default">
+													<i class="far fa-play-circle"></i>
+												</button>
+											</div><!-- /.video-wrap -->
+										</div><!-- /.video-intro -->
+
+										<div class="form-group floating-label">
+											<input type="text" class="form-control" id="title" name="title">
+											<label for="#title" class="form-label">Title</label>
+										</div>
+
+										<div class="form-group floating-label radius-sm textField">
+											<textarea name="description" id="description"
+												class="form-control"></textarea>
+											<label for="#description" class="form-label">Description here</label>
+										</div>
+									</form>
+								</div><!-- /.upload-form -->
+							</div><!-- /.holder -->
+						</div><!-- /.top-holder -->
+					</div>
+				</div>
+			</div>
+		</main> <!-- / .site-content -->
+
+		<footer id="footer" class="site-footer d-none">
+		</footer> <!-- / .site-footer -->
+
+		<button type="button" class="toggleDarkMode dark d-none">
+			<span>Night Mode</span>
+		</button>
+
+		<button type="button" class="toggleSidebar d-none"><span>Menu</span></button>
+	</div><!-- /#site-wrapper -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="vendors/slick/slick.js"></script>
+	<script src="vendors/match-height/jquery.matchHeight-min.js"></script>
+	<script src="assets/js/bundle.js"></script>
+</body>
+
+</html>

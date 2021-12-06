@@ -18,6 +18,8 @@ jQuery(document).ready(function ($) {
         }
     });
 
+    $('.fix-height,[data-fix="height"]').matchHeight();
+
     $(document).on('click', function () {
         $('#toggleForm, .user__lists').removeClass('show');
         // $('.mobDropSm').removeClass('open');

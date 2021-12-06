@@ -427,3 +427,46 @@
 		}
 	}
 }
+
+.upload-form {
+	.text-wrap {
+		font-size: 0.875rem;
+		line-height: 1.5;
+	}
+}
+
+.video-intro {
+	// max-width: 390px;
+	// margin: 0 auto;
+
+	video {
+		background: $black;
+		border-radius: 20px;
+		overflow: hidden;
+		width: 100%;
+
+		@include media-breakpoint-up(md) {
+			height: 300px;
+		}
+	}
+
+	.video-wrap {
+		position: relative;
+		z-index: 1;
+	}
+
+	.play-button {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		width: 100%;
+		height: 100%;
+		z-index: 2;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		font-size: 1.8rem;
+	}
+}

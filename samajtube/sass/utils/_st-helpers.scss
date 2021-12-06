@@ -29,17 +29,19 @@ img {
 
 // Fonts
 %font-roboto {
-    font-family: $font-roboto;
+	font-family: $font-roboto;
 }
+
 .font-roboto {
-    @extend %font-roboto;
+	@extend %font-roboto;
 }
 
 %font-open-sans {
-    font-family: $font-open-sans;
+	font-family: $font-open-sans;
 }
+
 .font-open-sans {
-    @extend %font-open-sans;
+	@extend %font-open-sans;
 }
 
 // Visibility
@@ -58,15 +60,17 @@ ol {
 .text-transform-none {
 	text-transform: none !important;
 }
+
 .text-underline {
 	text-decoration: underline;
+
 	&:hover {
 		text-decoration: none;
 	}
 }
 
 @for $i from 1 through 9 {
-	.font-#{$i*100}{
+	.font-#{$i*100} {
 		font-weight: $i*100;
 	}
 }
@@ -95,6 +99,94 @@ ol {
 	border: 0;
 	padding: 0;
 	background: transparent;
-	box-shadow:none;
+	box-shadow: none;
 	outline: none;
+}
+
+.site-branding__md {
+	a {
+		font-size: 1.8rem;
+		text-decoration: none;
+	}
+}
+
+.pt-ext-large {
+	padding: 1.3125rem 0;
+
+	@include media-breakpoint-up(md) {
+		padding: 3.3125rem 0;
+	}
+
+	@include media-breakpoint-up(lg) {
+		padding: 5.3125rem 0;
+	}
+}
+
+.bg-gray {
+	background: $gray-600;
+}
+
+.bg-fd-gray {
+	background: $fade-gray;
+}
+
+.opacity-0 {
+	opacity: 0 !important;
+	visibility: hidden !important;
+}
+
+.width-sm {
+	max-width: 620px;
+	margin: 0 auto;
+	padding: 1.5rem;
+
+	@include media-breakpoint-up(sm) {
+		padding: 2.5rem;
+	}
+
+	// @include media-breakpoint-up(lg) {
+	// 	padding: 2.1875rem;
+	// }
+}
+
+.border-mid-y {
+	position: relative;
+	z-index: 1;
+
+	&:before {
+		position: absolute;
+		content: '';
+		width: 1px;
+		background-color: $white;
+		top: 0;
+		bottom: 0;
+		left: 50%;
+		transform: translateX(-50%);
+		z-index: -1;
+		display: none;
+	}
+
+	&-sm {
+		&:before {
+			@include media-breakpoint-up(lg) {
+				display: block;
+			}
+		}
+	}
+
+	&-lg {
+		&:before {
+			@include media-breakpoint-up(lg) {
+				display: block;
+			}
+		}
+	}
+
+	&-xl {
+		&:before {
+			@include media-breakpoint-up(lg) {
+				display: block;
+			}
+		}
+	}
 }
