@@ -25,6 +25,15 @@
             [class^="icon"] {
                 color: $white;
             }
+
+            &.withimage {
+                a {
+                                   
+                    img {
+                        object-position: top left;
+                    }
+                }
+            }
         }
 
         &__right {
